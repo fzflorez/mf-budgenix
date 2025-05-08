@@ -9,8 +9,8 @@ export default function FormTracker() {
   const percentage = +((totalSpent / state.budget) * 100).toFixed(2);
 
   return (
-    <div className=' flex flex-col gap-5 items-center justify-center md:flex-row md:justify-evenly lg:justify-around'>
-      <div className='  min-w-40 w-full max-w-60 md:max-w-72 lg:max-w-80'>
+    <div className=' flex flex-col gap-5 items-center justify-center sm:flex-row sm:justify-evenly lg:justify-around'>
+      <div className='  min-w-40 w-full max-w-56 md:max-w-64 lg:max-w-72'>
         <CircularProgressbar
           value={percentage}
           styles={buildStyles({
