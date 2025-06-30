@@ -117,8 +117,9 @@ export default function ExpenseForm() {
           <input
             type='number'
             id='price'
+            placeholder='Ej: 100, 500, 1000, etc.'
             className=' w-full bg-gray-200 border-2 border-gray-300 rounded-md outline-none p-1 md:p-2'
-            value={expense.price}
+            value={expense.price === 0 ? '' : expense.price}
             onChange={handleChange}
           />
         </div>

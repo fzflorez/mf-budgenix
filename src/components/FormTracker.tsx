@@ -28,7 +28,7 @@ export default function FormTracker() {
           className=' bg-emerald-500 rounded-md w-full p-2 text-gray-200 font-semibold text-base hover:bg-emerald-600 transition-colors duration-300 md:text-xl'
           onClick={() => dispatch({ type: 'restart-app' })}
         >
-          Resetear App
+          Reiniciar App
         </button>
 
         <DisplayAmount label='Presupuesto' amount={state.budget} />

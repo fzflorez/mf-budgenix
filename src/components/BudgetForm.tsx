@@ -30,8 +30,9 @@ export default function BudgetForm() {
         <span className='text-gray-500 text-base font-bold md:text-lg'>$</span>
         <input
           type='number'
-          className='flex-1 bg-transparent outline-none text-base font-bold text-gray-600 md:text-lg'
-          value={budget}
+          className='flex-1 bg-transparent outline-none text-base font-bold text-gray-600 md:text-lg placeholder:text-gray-400 placeholder:font-semibold'
+          placeholder='Ingrese su presupuesto. Ej: 1000, 5000, 10000'
+          value={budget === 0 ? '' : budget}
           onChange={handleChange}
         />
       </div>
