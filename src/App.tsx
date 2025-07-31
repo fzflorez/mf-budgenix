@@ -21,22 +21,21 @@ function App() {
   }, [state]);
 
   return (
-    <div className=' space-y-10'>
-      <header className=' bg-gray-500 p-5'>
-        <div className=' max-w-7xl mx-auto'>
-          <h1 className=' text-4xl text-center font-bold text-gray-200 md:text-5xl md:text-left'>
-            Budgenix
-          </h1>
+    <div className="min-h-screen flex flex-col items-center py-12 px-4 sm:px-6 lg:px-8">
+
+      <header className="w-full flex justify-center mb-8">
+        <div className='w-full max-w-5xl bg-gray-700 shadow-xl rounded-xl p-6 mb-8 border border-gray-600'>
+          <h1 className="text-5xl font-extrabold text-emerald-400 text-center">Budgenix</h1>
         </div>
       </header>
 
-      <main className=' space-y-10 pb-10 px-4 md:px-8 lg:px-0'>
-        <section className=' bg-white shadow-lg rounded-md px-5 py-8 max-w-4xl mx-auto md:p-10'>
+      <main className="w-full max-w-5xl bg-gray-700 shadow-xl rounded-xl p-4 sm:p-6 border border-gray-600">
+        <section className="mb-8 p-4 sm:p-8 bg-gray-900 rounded-lg shadow-inner border border-gray-600">
           {isValidBudget ? <FormTracker /> : <BudgetForm />}
         </section>
 
         {isValidExpense && (
-          <section className=' bg-white shadow-lg rounded-md px-4 py-6 max-w-4xl mx-auto md:p-10'>
+          <section className='mb-8 p-8 bg-gray-900 rounded-lg shadow-inner border border-gray-700'>
             <FilterExpenses />
           </section>
         )}

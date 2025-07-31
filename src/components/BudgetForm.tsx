@@ -17,33 +17,28 @@ export default function BudgetForm() {
 
   return (
     <form onSubmit={handleSubmit}>
-      <div className=' space-y-1'>
-        <h2 className=' w-full text-center text-2xl font-bold text-gray-600 inline-block md:text-3xl lg:text-4xl'>
-          Definir Presupuesto
-        </h2>
-        <p className='text-center text-gray-500 mb-6 text-sm md:text-base'>
-          Ingrese el monto total disponible para su presupuesto
-        </p>
-      </div>
+      <h2 className="text-3xl font-bold text-emerald-400 mb-6 text-center">
+        Define tu Presupuesto
+      </h2>
+      <p className="text-gray-300 mb-8 text-center text-lg">Ingresa el monto total que deseas asignar para tu presupuesto mensual.</p>
 
-      <div className='flex items-center gap-2 border border-gray-400 rounded-lg px-4 py-2 mt-10 mb-4 md:mt-12 md:mb-6'>
-        <span className='text-gray-500 text-base font-bold md:text-lg'>$</span>
-        <input
-          type='number'
-          className='flex-1 bg-transparent outline-none text-base font-bold text-gray-600 md:text-lg placeholder:text-gray-400 placeholder:font-semibold'
-          placeholder='Ingrese su presupuesto. Ej: 1000, 5000, 10000'
-          value={budget === 0 ? '' : budget}
-          onChange={handleChange}
-        />
+      <div className="flex flex-col lg:flex-row items-center gap-6">
+        <div className="relative w-full lg:w-2/3">
+          <span className="absolute left-4 top-1/2 -translate-y-1/2 text-gray-500 text-2xl font-bold">$</span>
+          <input 
+            type="number" 
+            placeholder="Ej: 1000, 5000, 10000"
+            className="w-full pl-12 pr-6 py-3 sm:py-4 bg-gray-700 border border-gray-600 rounded-lg outline-none text-gray-100 text-lg placeholder-gray-400 transition duration-300"
+            value={budget === 0 ? '' : budget}
+            onChange={handleChange}
+          />
+        </div>
+        <button
+          className={`w-full lg:w-1/3 bg-emerald-600 text-white text-lg font-semibold py-3 sm:py-4 px-8 rounded-lg transition duration-300 ease-in-out transform ${budget <= 0 ? 'opacity-50 cursor-default' : 'cursor-pointer hover:bg-emerald-700'}`}
+        >
+          Establecer Presupuesto
+        </button>
       </div>
-
-      <input
-        type='submit'
-        value='Ingresar Presupuesto'
-        className={` w-full bg-emerald-500 text-gray-200 font-semibold p-2 text-base transition-colors duration-300 md:text-lg ${
-          budget <= 0 ? 'opacity-50 ' : 'cursor-pointer hover:bg-emerald-600'
-        }`}
-      />
     </form>
   );
 }
