@@ -28,7 +28,7 @@ function App() {
       </header>
 
       <main className="w-full max-w-5xl bg-gray-800 shadow-xl rounded-xl p-4 sm:p-6 border border-gray-600">
-        <section className="mb-8 p-4 sm:p-8 bg-gray-900 rounded-lg border border-gray-600">
+        <section className="mb-8 p-6 sm:p-8 bg-gray-900 rounded-lg border border-gray-600">
           {isValidBudget ? <FormTracker /> : <BudgetForm />}
         </section>
 

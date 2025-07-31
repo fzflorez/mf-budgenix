@@ -1,0 +1,52 @@
+/* Estilos para react-date-picker y react-calendar en modo oscuro */
+.react-date-picker__button svg {
+  stroke: #f9fafb;
+  width: 1.2rem;
+  height: 1.2rem;
+}
+
+.react-date-picker__button:disabled svg {
+  stroke: #6b7280; /* gris si está deshabilitado */
+}
+
+.react-date-picker__wrapper {
+  background-color: #374151; 
+  border: 1px solid #4b5563;
+  color: #f9fafb;           
+  border-radius: 0.375rem;
+  padding: 0.5rem;
+}
+
+.react-calendar {
+  background-color: #1f2937; 
+  color: #f9fafb;
+  border: 1px solid #4b5563;
+}
+
+.react-calendar__tile {
+  background: transparent;
+  color: #e5e7eb;
+}
+
+.react-calendar button:enabled:hover {
+  background: #f9fafb;
+  color: #2b2b2b;
+}
+
+.react-calendar__tile--now {
+  border: 1px solid #facc15; 
+}
+
+.react-calendar__tile--active {
+  background: #10b981;
+  color: white;
+}
+
+.react-calendar__navigation {
+  background-color: #111827; 
+  color: #f3f4f6;
+}
+
+.react-calendar__navigation button:disabled {
+  color: #6b7280; 
+}

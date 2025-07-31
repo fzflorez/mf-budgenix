@@ -3,9 +3,11 @@ import { categories } from "../data/categories";
 import DatePicker from "react-date-picker";
 import "react-date-picker/dist/DatePicker.css";
 import "react-calendar/dist/Calendar.css";
+import "../date-picker-dark.css";
 import { DraftExpense, Value } from "../types";
 import useBudget from "../hooks/useBudget";
 import ErrorMessage from "./error-message";
+import ExpenseLabel from "./expense-label";
 
 export default function ExpenseForm() {
   const { state, dispatch, availableBudget } = useBudget();
@@ -89,52 +91,47 @@ export default function ExpenseForm() {
 
   return (
     <form className=" space-y-6">
-      <h2 className=" w-full text-center text-3xl font-bold text-emerald-600 border-b-4 border-emerald-600 pb-2 md:text-4xl">
+      <h2 className=" w-full text-center text-3xl font-bold text-emerald-400 border-b-4 border-emerald-400 pb-2 md:text-4xl">
         {state.editingId ? "Editando Gasto" : "Nuevo Gasto"}
       </h2>
 
       {error && <ErrorMessage>{error}</ErrorMessage>}
 
-      <div className=" space-y-4">
-        <div className=" space-y-2">
-          <label htmlFor="name" className=" text-lg font-bold md:text-xl">
-            Nombre del Gasto:
-          </label>
+      <div className="space-y-4">
+        <div className="space-y-2">
+          <ExpenseLabel htmlFor="name">Nombre del Gasto:</ExpenseLabel>
           <input
             type="texto"
             id="name"
+            autoComplete="off"
             placeholder="Ej: Medicina, Transporte, Comida, Suscripciones, etc."
-            className=" w-full bg-gray-200 border-2 border-gray-300 rounded-md outline-none p-1 md:p-2"
+            className="w-full bg-gray-700 border border-gray-600 text-gray-100 rounded-md outline-none py-3 px-4"
             value={expense.name}
             onChange={handleChange}
           />
         </div>
 
         <div className=" space-y-2">
-          <label htmlFor="price" className=" text-lg font-bold md:text-xl">
-            Precio:
-          </label>
+          <ExpenseLabel htmlFor="price">Precio:</ExpenseLabel>
           <input
             type="number"
             id="price"
             placeholder="Ej: 100, 500, 1000, etc."
-            className=" w-full bg-gray-200 border-2 border-gray-300 rounded-md outline-none p-1 md:p-2"
+            className="w-full bg-gray-700 border border-gray-600 text-gray-100 rounded-md outline-none py-3 px-4"
             value={expense.price === 0 ? "" : expense.price}
             onChange={handleChange}
           />
         </div>
 
         <div className=" space-y-2">
-          <label htmlFor="category" className=" text-lg font-bold md:text-xl">
-            Categoría:
-          </label>
+          <ExpenseLabel htmlFor="category">Categoría:</ExpenseLabel>
           <select
             id="category"
-            className=" w-full bg-gray-200 border-2 border-gray-300 rounded-md outline-none p-1 md:p-2"
+            className="w-full bg-gray-700 border border-gray-600 text-gray-100 rounded-md outline-none py-3 px-4"
             value={expense.category}
             onChange={handleChange}
           >
-            <option value="">--Seleccione--</option>
+            <option value="">-- Selecciona una Categoría --</option>
             {categories.map((category) => (
               <option key={category.id} value={category.id}>
                 {category.name}
@@ -143,22 +140,25 @@ export default function ExpenseForm() {
           </select>
         </div>
 
-        <div className=" space-y-2">
-          <p className=" text-lg font-bold md:text-xl">Fecha del Gasto:</p>
+        <div className="space-y-2">
+          <p className="text-base text-gray-200 font-semibold md:text-lg">
+            Fecha del Gasto:
+          </p>
           <DatePicker
-            className=" w-full bg-gray-200 border-2 border-gray-300 rounded-md outline-none p-1 md:p-2"
+            className="w-full bg-gray-700 border border-gray-600 text-gray-100 rounded-md outline-none py-3 px-4"
             value={expense.date}
             onChange={handleChangeDate}
           />
         </div>
       </div>
 
-      <input
+      <button
         type="button"
-        value={state.editingId ? "Guardar Gasto" : "Registrar Gasto"}
-        className=" w-full bg-emerald-600 text-gray-200 font-semibold text-base py-2 px-4 cursor-pointer transition-colors duration-300 md:text-xl"
+        className="w-full bg-emerald-500 hover:bg-emerald-600 text-white text-base md:text-lg font-bold py-3 px-6 rounded-md shadow-md transition duration-300 ease-in-out transform"
         onClick={isValidExpense}
-      />
+      >
+        {state.editingId ? "Guardar Gasto" : "Registrar Gasto"}
+      </button>
     </form>
   );
 }

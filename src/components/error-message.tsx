@@ -6,7 +6,7 @@ type MessageProps = {
 
 export default function ErrorMessage({ children }: MessageProps) {
   return (
-    <p className=' bg-red-100 py-2 text-red-800 text-center font-semibold'>
+    <p className='bg-gray-50 py-2 text-red-500 text-center rounded-md font-semibold'>
       {children}
     </p>
   );

@@ -2,10 +2,18 @@ import { buildStyles, CircularProgressbar } from "react-circular-progressbar";
 import useBudget from "../hooks/useBudget";
 import DisplayAmount from "./display-amount";
 import "react-circular-progressbar/dist/styles.css";
+import { useState } from "react";
+import RestartModal from "./restart-modal";
 
 export default function FormTracker() {
+  const [showModal, setShowModal] = useState(false);
   const { state, dispatch, totalSpent, availableBudget } = useBudget();
   const percentage = +((totalSpent / state.budget) * 100).toFixed(2);
+
+  const handleRestart = () => {
+    dispatch({ type: "restart-app" });
+    setShowModal(false);
+  };
 
   return (
     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 items-center justify-items-center">
@@ -69,10 +77,17 @@ export default function FormTracker() {
 
         <button
           className="w-full mt-6 bg-emerald-400 hover:bg-emerald-600 text-white font-bold py-3 px-6 rounded-lg transition duration-300 ease-in-out transform"
-          onClick={() => dispatch({ type: "restart-app" })}
+          onClick={() => setShowModal(true)}
         >
           Reiniciar App
         </button>
+
+        {showModal && (
+          <RestartModal
+            onConfirm={handleRestart}
+            onCancel={() => setShowModal(false)}
+          />
+        )}
       </div>
     </div>
   );
