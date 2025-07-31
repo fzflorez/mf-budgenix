@@ -34,7 +34,7 @@ export default function BudgetForm() {
           />
         </div>
         <button
-          className={`w-full lg:w-1/3 bg-emerald-600 text-white text-base md:text-lg font-semibold py-3 sm:py-4 px-8 rounded-lg transition duration-300 ease-in-out transform ${budget <= 0 ? 'opacity-50 cursor-default' : 'cursor-pointer hover:bg-emerald-700'}`}
+          className={`w-full lg:w-1/3 bg-emerald-600 text-white text-base md:text-lg font-semibold py-3 px-6 sm:py-4 rounded-lg transition duration-300 ease-in-out transform ${budget <= 0 ? 'opacity-50 cursor-default' : 'cursor-pointer hover:bg-emerald-700'}`}
         >
           Establecer Presupuesto
         </button>
