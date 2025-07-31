@@ -1,10 +1,10 @@
 import { useEffect, useMemo } from 'react';
-import BudgetForm from './components/BudgetForm';
+import BudgetForm from './components/budget-form';
 import useBudget from './hooks/useBudget';
-import FormTracker from './components/FormTracker';
-import ExpenseModal from './components/ExpenseModal';
-import ExpenseList from './components/ExpenseList';
-import FilterExpenses from './components/FilterExpenses';
+import FormTracker from './components/form-tracker';
+import ExpenseModal from './components/expense-modal';
+import ExpenseList from './components/expense-list';
+import FilterExpenses from './components/filter-expenses';
 
 function App() {
   const { state } = useBudget();
