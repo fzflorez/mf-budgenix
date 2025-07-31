@@ -2,12 +2,10 @@ import { buildStyles, CircularProgressbar } from "react-circular-progressbar";
 import useBudget from "../hooks/useBudget";
 import DisplayAmount from "./display-amount";
 import "react-circular-progressbar/dist/styles.css";
-import { useMemo } from "react";
 
 export default function FormTracker() {
   const { state, dispatch, totalSpent, availableBudget } = useBudget();
   const percentage = +((totalSpent / state.budget) * 100).toFixed(2);
-  const isValidExpense = useMemo(() => state.expenses.length, [state.expenses]);
 
   return (
     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 items-center justify-items-center">
