@@ -2,6 +2,10 @@
 @tailwind components;
 @tailwind utilities;
 
+h1, h2 {
+  font-family: "sora", sans-serif
+}
+
 /*** SWIPE LIST OVERRIDES **/
 .swipeable-list-item__leading-actions,
 .swipeable-list-item__trailing-actions {

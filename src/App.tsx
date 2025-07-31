@@ -24,7 +24,9 @@ function App() {
     <div className="min-h-screen flex flex-col items-center py-12 px-4 sm:px-6 lg:px-8">
 
       <header className="w-full max-w-5xl bg-gray-800 shadow-xl rounded-xl p-4 md:p-6 mb-8 border border-gray-600">
-        <h1 className="text-4xl md:text-5xl font-extrabold text-emerald-400 text-center">Budgenix</h1>
+        <h1 className="text-4xl md:text-5xl font-extrabold text-emerald-400 text-center">
+          Budge<span className='text-blue-400'>nix</span>
+        </h1>
       </header>
 
       <main className="w-full max-w-5xl bg-gray-800 shadow-xl rounded-xl p-4 sm:p-6 border border-gray-600">

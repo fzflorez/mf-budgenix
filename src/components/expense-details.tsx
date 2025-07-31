@@ -74,7 +74,7 @@ export default function ExpenseDetails({ expense }: ExpenseDetailsProps) {
             </div>
           </div>
 
-          <p className="font-bold text-2xl md:text-3xl text-emerald-400 flex-shrink-0">
+          <p className="font-bold text-2xl md:text-3xl text-blue-400 flex-shrink-0">
             {expense.price}
           </p>
         </div>

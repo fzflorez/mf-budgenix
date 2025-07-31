@@ -76,7 +76,7 @@ export default function FormTracker() {
         </div>
 
         <button
-          className="w-full mt-6 bg-emerald-400 hover:bg-emerald-600 text-white font-bold py-3 px-6 rounded-lg transition duration-300 ease-in-out transform"
+          className="w-full mt-6 bg-blue-400 hover:bg-blue-500 text-white font-bold py-3 px-6 rounded-lg transition duration-300 ease-in-out transform"
           onClick={() => setShowModal(true)}
         >
           Reiniciar App

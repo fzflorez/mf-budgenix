@@ -154,7 +154,7 @@ export default function ExpenseForm() {
 
       <button
         type="button"
-        className="w-full bg-emerald-500 hover:bg-emerald-600 text-white text-base md:text-lg font-bold py-3 px-6 rounded-md shadow-md transition duration-300 ease-in-out transform"
+        className="w-full bg-blue-400 hover:bg-blue-500 text-white text-base md:text-lg font-bold py-3 px-6 rounded-md shadow-md transition duration-300 ease-in-out transform"
         onClick={isValidExpense}
       >
         {state.editingId ? "Guardar Gasto" : "Registrar Gasto"}
