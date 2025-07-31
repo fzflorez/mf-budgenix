@@ -57,24 +57,21 @@ export default function ExpenseDetails({ expense }: ExpenseDetailsProps) {
         leadingActions={leadingActions()}
         trailingActions={trailingActions()}
       >
-        <div className=' w-full bg-white shadow-lg rounded-md px-4 py-6 max-w-4xl mx-auto flex flex-col justify-center items-center sm:flex-row sm:p-6 md:p-10 gap-5'>
-          <div>
+        <div className='w-full bg-gray-700 border border-gray-600 rounded-lg p-6 flex flex-col md:flex-row md:justify-between items-center gap-4'>
+          <div className='flex flex-col md:flex-row items-center gap-4'>
             <img
               src={`/images/icono_${categoriesInfo.icon}.svg`}
               alt='Imagen Categoría'
-              className=' w-14 md:w-20'
+              className=' w-14 md:w-16'
             />
+
+            <div className='space-y-1'>
+              <p className=' text-xl md:text-2xl font-bold text-gray-200'>{expense.name}</p>
+              <p className='text-gray-300 text-sm md:text-base'>{formatDate(expense.date!.toString())}</p>
+            </div>     
           </div>
 
-          <div className=' flex-1 space-y-1'>
-            <p className=' text-xl font-bold text-gray-500 uppercase'>
-              {categoriesInfo.name}
-            </p>
-            <p className=' text-2xl font-bold text-gray-600'>{expense.name}</p>
-            <p>{formatDate(expense.date!.toString())}</p>
-          </div>
-
-          <DisplayAmount amount={expense.price} />
+          <p className='font-bold text-2xl md:text-3xl text-emerald-400 flex-shrink-0'>{expense.price}</p>
         </div>
       </SwipeableListItem>
     </SwipeableList>

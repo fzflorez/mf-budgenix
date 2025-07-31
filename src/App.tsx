@@ -23,24 +23,24 @@ function App() {
   return (
     <div className="min-h-screen flex flex-col items-center py-12 px-4 sm:px-6 lg:px-8">
 
-      <header className="w-full max-w-5xl bg-gray-700 shadow-xl rounded-xl p-4 md:p-6 mb-8 border border-gray-600">
+      <header className="w-full max-w-5xl bg-gray-800 shadow-xl rounded-xl p-4 md:p-6 mb-8 border border-gray-600">
         <h1 className="text-4xl md:text-5xl font-extrabold text-emerald-400 text-center">Budgenix</h1>
       </header>
 
-      <main className="w-full max-w-5xl bg-gray-700 shadow-xl rounded-xl p-4 sm:p-6 border border-gray-600">
-        <section className="mb-8 p-4 sm:p-8 bg-gray-900 rounded-lg shadow-inner border border-gray-600">
+      <main className="w-full max-w-5xl bg-gray-800 shadow-xl rounded-xl p-4 sm:p-6 border border-gray-600">
+        <section className="mb-8 p-4 sm:p-8 bg-gray-900 rounded-lg border border-gray-600">
           {isValidBudget ? <FormTracker /> : <BudgetForm />}
         </section>
 
         {isValidExpense && (
-          <section className='mb-8 p-8 bg-gray-900 rounded-lg shadow-inner border border-gray-700'>
+          <section className='mb-6 p-6 bg-gray-900 rounded-lg border border-gray-600'>
             <FilterExpenses />
           </section>
         )}
 
         <section>
           {isValidBudget && (
-            <div className=' max-w-4xl mx-auto'>
+            <div>
               <ExpenseList />
               <ExpenseModal />
             </div>

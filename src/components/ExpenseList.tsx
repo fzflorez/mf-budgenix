@@ -16,21 +16,21 @@ export default function ExpenseList() {
   );
 
   return (
-    <div className=' space-y-4'>
-      <h2 className=' text-2xl text-gray-600 font-bold text-center md:text-3xl lg:text-4xl'>
-        Lista de Gastos
+    <div>
+      <h2 className='text-3xl font-bold text-gray-100 mb-6 text-center'>
+        Tus Gastos
       </h2>
 
       {isValidExpense ? (
-        <p className=' text-center text-base font-medium md:text-lg'>
-          No hay gastos aún.
+        <p className='text-center text-gray-400 text-lg mt-8'>
+          Aún no hay gastos registrados! Empieza a añadir algunos.
         </p>
       ) : (
-        <>
+        <div className=' space-y-4 md:space-y-6'>
           {filteredExpenses.map((expense) => (
             <ExpenseDetails key={expense.id} expense={expense} />
           ))}
-        </>
+        </div>
       )}
     </div>
   );
